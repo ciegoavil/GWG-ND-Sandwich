@@ -48,6 +48,7 @@ public class DetailActivity extends AppCompatActivity {
         populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
+                .error(R.drawable.ic_hourglass_empty_black_24dp)
                 .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());

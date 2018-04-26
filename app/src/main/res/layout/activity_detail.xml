@@ -8,12 +8,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:fillViewport="true">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/image_iv"
@@ -22,28 +22,32 @@
                 android:contentDescription="@string/sandwich_picture_content_description"
                 android:cropToPadding="false"
                 android:scaleType="centerCrop"
-                app:layout_constraintBottom_toTopOf="@+id/origin_label_tv"
+                app:layout_constraintBottom_toTopOf="@+id/origin_tv"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/origin_label_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_detail_margin_item"
+                android:layout_marginStart="@dimen/activity_detail_margin_item"
+                android:layout_marginTop="@dimen/activity_detail_margin_item"
                 android:text="@string/detail_place_of_origin_label"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/also_known_label_tv"
+                android:textSize="@dimen/activity_detail_text_size"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/image_iv" />
 
             <TextView
                 android:id="@+id/origin_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/also_known_tv"
-                app:layout_constraintLeft_toRightOf="@+id/guideline"
-                app:layout_constraintRight_toRightOf="parent"
+                android:layout_margin="@dimen/activity_detail_margin_item"
+                android:textSize="@dimen/activity_detail_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/image_iv"
                 tools:text="Origin value" />
 
@@ -51,23 +55,22 @@
                 android:id="@+id/also_known_label_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_detail_margin_item"
                 android:text="@string/detail_also_known_as_label"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/ingredients_label_tv"
+                android:textSize="@dimen/activity_detail_text_size"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/origin_label_tv" />
+                app:layout_constraintTop_toTopOf="@+id/also_known_tv" />
 
 
             <TextView
                 android:id="@+id/also_known_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/also_known_label_tv"
-                app:layout_constraintTop_toTopOf="@+id/also_known_label_tv"
-                app:layout_constraintBottom_toTopOf="@+id/ingredients_label_tv"
-                app:layout_constraintLeft_toRightOf="@+id/guideline"
+                android:layout_margin="@dimen/activity_detail_margin_item"
+                android:textSize="@dimen/activity_detail_text_size"
                 app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/origin_tv"
                 tools:text="Also known value" />
 
@@ -75,21 +78,21 @@
                 android:id="@+id/ingredients_label_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_detail_margin_item"
                 android:text="@string/detail_ingredients_label"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/detail_description_label_tv"
+                android:textSize="@dimen/activity_detail_text_size"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/also_known_label_tv" />
+                app:layout_constraintTop_toTopOf="@+id/ingredients_tv" />
 
             <TextView
                 android:id="@+id/ingredients_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/ingredients_label_tv"
-                app:layout_constraintTop_toTopOf="@+id/ingredients_label_tv"
-                app:layout_constraintLeft_toRightOf="@+id/guideline"
+                android:layout_margin="@dimen/activity_detail_margin_item"
+                android:textSize="@dimen/activity_detail_text_size"
                 app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/also_known_tv"
                 tools:text="Ingredients value" />
 
@@ -97,20 +100,23 @@
                 android:id="@+id/detail_description_label_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_detail_margin_item"
                 android:text="@string/detail_description_label"
                 android:textStyle="bold"
+                android:textSize="@dimen/activity_detail_text_size"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/ingredients_label_tv" />
+                app:layout_constraintTop_toTopOf="@+id/description_tv" />
 
             <TextView
                 android:id="@+id/description_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/detail_description_label_tv"
-                app:layout_constraintLeft_toRightOf="@+id/guideline"
+                android:layout_margin="@dimen/activity_detail_margin_item"
+                android:textSize="@dimen/activity_detail_text_size"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/detail_description_label_tv"
+                app:layout_constraintLeft_toRightOf="@+id/guideline"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/ingredients_tv"
                 tools:text="Description value" />
 
             <android.support.constraint.Guideline
